@@ -30,3 +30,57 @@ public class Main {
 
     }
 }
+
+
+
+
+
+
+class MySumThread extends Thread {
+    public int[] arr;
+
+    public int sum;
+
+    public MySumThread(int[] arr) {
+        this.arr = arr;
+
+    }
+
+    @Override
+    public void run() {
+        sum=0;
+
+        for (int i = 0; i <arr.length ; i++) {
+            sum = sum+arr[i];
+        }
+    }
+
+    public int getSum() {
+        return sum;
+    }
+}
+
+class MyMaxThread extends Thread {
+    public int[] arr;
+
+    public int max;
+
+    public MyMaxThread(int[] arr) {
+        this.arr = arr;
+
+    }
+
+    @Override
+    public void run() {
+        max = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+    }
+
+    public int getMax() {
+        return max;
+    }
+}
